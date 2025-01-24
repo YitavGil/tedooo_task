@@ -26,7 +26,6 @@ const FeedItemFooter: React.FC<FeedItemFooterProps> = ({
 
   return (
     <div className="flex flex-col">
-      {/* Upper section */}
       <div className="flex justify-between items-center text-sm text-gray-500 px-2">
         <div className="flex gap-3">
           <img width={18} height={18} src={likeImg} alt="like" />
@@ -36,10 +35,8 @@ const FeedItemFooter: React.FC<FeedItemFooterProps> = ({
         <span>{comments} Comments</span>
       </div>
 
-      {/* Divider */}
       <div className="w-[99%] mx-auto h-px bg-gray-200 my-3" />
 
-      {/* Lower section */}
       <div className="flex justify-center items-center gap-[500px]">
         <button
           onClick={handleLike}

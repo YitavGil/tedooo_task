@@ -18,7 +18,6 @@ const Header: React.FC<HeaderProps> = ({ avatar }) => {
     return `${baseClasses} ${textClasses} hover:text-emerald-500`;
   };
 
-  // Active indicator line
   const ActiveIndicator = () => (
     <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-500 rounded-full" />
   );
@@ -26,10 +25,8 @@ const Header: React.FC<HeaderProps> = ({ avatar }) => {
   return (
     <header className="h-16 sticky top-0 bg-white border-b border-gray-100 z-50">
       <div className="h-full max-w-7xl mx-auto px-4 flex items-center">
-        {/* Logo */}
         <img src={tedooLogo} alt="Tedoo Logo" className="w-10 h-10 mr-3" />
 
-        {/* Search Bar */}
         <div className="relative w-[480px]">
           <input
             type="text"
@@ -54,7 +51,6 @@ const Header: React.FC<HeaderProps> = ({ avatar }) => {
           </svg>
         </div>
 
-        {/* Navigation */}
         <nav className="flex h-full ml-auto header ">
           <button
             onClick={() => setActiveItem("home")}
@@ -84,7 +80,6 @@ const Header: React.FC<HeaderProps> = ({ avatar }) => {
           </button>
         </nav>
 
-        {/* Profile */}
         <div className="ml-8">
           <img
             src={avatar}

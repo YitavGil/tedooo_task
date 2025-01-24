@@ -1,5 +1,3 @@
-// src/services/api/client.ts
-
 import axios from 'axios';
 
 const BASE_URL = '/';
@@ -11,19 +9,15 @@ export const createApiClient = () => {
     timeout: REQUEST_TIMEOUT,
     headers: {
       'Content-Type': 'application/json',
-      // Add CORS headers
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
       'Access-Control-Allow-Headers': 'Origin, Content-Type, Accept',
     },
-    // Add withCredentials for CORS
     withCredentials: false
   });
 
-  // Add request interceptor for better error handling
   client.interceptors.request.use(
     config => {
-      // Add timestamp to prevent caching
       const timestamp = new Date().getTime();
       const separator = config.url?.includes('?') ? '&' : '?';
       config.url = `${config.url}${separator}_t=${timestamp}`;
@@ -32,7 +26,6 @@ export const createApiClient = () => {
     error => Promise.reject(error)
   );
 
-  // Add response interceptor with retry logic
   let retryCount = 0;
   const MAX_RETRIES = 3;
 

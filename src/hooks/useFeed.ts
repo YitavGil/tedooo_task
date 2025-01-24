@@ -1,5 +1,3 @@
-// src/hooks/useFeed.ts
-
 import { useEffect, useCallback, useRef } from 'react';
 import { useFeedStore } from '../store/slices/feedSlice';
 import { feedApi } from '../services/api/feedApi';

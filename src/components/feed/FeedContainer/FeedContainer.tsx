@@ -1,5 +1,3 @@
-//src/components/feed/FeedContainer/FeedContainer.tsx
-
 import React, { useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useFeedStore } from '../../../store/slices/feedSlice';

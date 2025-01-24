@@ -1,5 +1,3 @@
-//src/App.tsx
-
 import { useEffect, useState } from "react";
 import Header from "./components/layout/Header/Header";
 import FeedContainer from "./components/feed/FeedContainer/FeedContainer";
@@ -17,7 +15,7 @@ function App() {
   }, [posts]);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#f6f7f7]">
       <Header avatar={avatar} />
       <main className="container mx-auto px-4">
         <FeedContainer />

@@ -1,8 +1,6 @@
-// src/store/slices/feedSlice.ts
-
-import { create } from 'zustand'
-import { devtools, persist } from 'zustand/middleware'
-import { FeedState, Post, ApiError } from '../../types'
+import { create } from 'zustand';
+import { devtools, persist } from 'zustand/middleware';
+import { FeedState, Post, ApiError } from '../../types';
 
 const initialState: FeedState = {
  posts: [],
@@ -10,8 +8,8 @@ const initialState: FeedState = {
  loadingState: 'idle',
  error: null,
  lastUpdated: null,
- impressions: new Set()
-}
+ impressions: new Set<string>()
+};
 
 interface FeedActions {
  setPosts: (posts: Post[]) => void;
@@ -119,10 +117,13 @@ export const useFeedStore = create<FeedState & FeedActions>()(
 
        markAsImpressed: (postId) =>
          set((state) => ({
-           impressions: new Set([...state.impressions, postId])
+           impressions: new Set([...Array.from(state.impressions), postId])
          })),
 
-       resetFeed: () => set(initialState)
+       resetFeed: () => set({ 
+         ...initialState,
+         impressions: new Set<string>()
+       })
      }),
      { name: 'feed-store' }
    ),
@@ -133,14 +134,14 @@ export const useFeedStore = create<FeedState & FeedActions>()(
        lastUpdated: state.lastUpdated,
        impressions: Array.from(state.impressions)
      }),
-     onRehydrateStorage: (state) => {
+     onRehydrateStorage: () => (state) => {
        if (state && Array.isArray(state.impressions)) {
          state.impressions = new Set(state.impressions);
        }
      }
    }
  )
-)
+);
 
 export const selectPosts = (state: FeedState) => state.posts;
 export const selectHasMore = (state: FeedState) => state.hasMore;

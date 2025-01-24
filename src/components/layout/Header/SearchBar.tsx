@@ -1,4 +1,3 @@
-// src/components/layout/Header/SearchBar.tsx
 import React, { useState, useCallback, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { debounce } from 'lodash';

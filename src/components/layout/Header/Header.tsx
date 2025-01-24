@@ -31,7 +31,7 @@ const Header: React.FC<HeaderProps> = ({ avatar }) => {
           <input
             type="text"
             placeholder="Search"
-            className="w-full h-10 pl-10 pr-4 bg-gray-50 rounded-lg text-gray-600 text-sm focus:outline-none"
+            className="w-full max-w-[216px] h-10 pl-10 pr-4 bg-gray-50 rounded-xl text-gray-600 text-sm focus:outline-none"
           />
           <svg
             className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
@@ -56,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({ avatar }) => {
             onClick={() => setActiveItem("home")}
             className={getNavItemClasses("home")}
           >
-            <Home className="w-6 h-6" />
+            <Home className="w-4.5 h-4.5" />
             <span className="ml-2 text-sm font-medium ">Home</span>
             {activeItem === "home" && <ActiveIndicator />}
           </button>
@@ -65,7 +65,7 @@ const Header: React.FC<HeaderProps> = ({ avatar }) => {
             onClick={() => setActiveItem("messaging")}
             className={`${getNavItemClasses("messaging")} ml-8`}
           >
-            <MessageCircle className="w-6 h-6" />
+            <MessageCircle className="w-4.5 h-4.5" />
             <span className="ml-2 text-sm font-medium">Messaging</span>
             {activeItem === "messaging" && <ActiveIndicator />}
           </button>
@@ -74,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({ avatar }) => {
             onClick={() => setActiveItem("notifications")}
             className={`${getNavItemClasses("notifications")} ml-8`}
           >
-            <Bell className="w-6 h-6" />
+            <Bell className="w-4.5 h-4.5" />
             <span className="ml-2 text-sm font-medium">Notifications</span>
             {activeItem === "notifications" && <ActiveIndicator />}
           </button>

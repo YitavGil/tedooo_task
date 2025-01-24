@@ -24,10 +24,10 @@ const Header: React.FC<HeaderProps> = ({ avatar }) => {
 
   return (
     <header className="h-16 sticky top-0 bg-white border-b border-gray-100 z-50">
-      <div className="h-full max-w-7xl mx-auto px-4 flex items-center">
-        <img src={tedooLogo} alt="Tedoo Logo" className="w-10 h-10 mr-3" />
+      <div className="h-full max-w-7xl mx-auto px-4 flex items-center justify-between">
+        <img src={tedooLogo} alt="Tedoo Logo" className="w-10 h-10" />
 
-        <div className="relative w-[480px]">
+        <div className="relative w-[480px] max-w-full hidden sm:block">
           <input
             type="text"
             placeholder="Search"
@@ -51,13 +51,13 @@ const Header: React.FC<HeaderProps> = ({ avatar }) => {
           </svg>
         </div>
 
-        <nav className="flex h-full ml-auto header ">
+        <nav className="hidden md:flex h-full ml-auto">
           <button
             onClick={() => setActiveItem("home")}
             className={getNavItemClasses("home")}
           >
             <Home className="w-4.5 h-4.5" />
-            <span className="ml-2 text-sm font-medium ">Home</span>
+            <span className="ml-2 text-sm font-medium">Home</span>
             {activeItem === "home" && <ActiveIndicator />}
           </button>
 
@@ -80,7 +80,7 @@ const Header: React.FC<HeaderProps> = ({ avatar }) => {
           </button>
         </nav>
 
-        <div className="ml-8">
+        <div className="ml-4">
           <img
             src={avatar}
             alt="Profile"

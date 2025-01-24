@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+.header {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .sans-content {
+    font-family: 'DM Sans', sans-serif;
+  }

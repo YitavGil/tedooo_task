@@ -23,7 +23,7 @@ const Header: React.FC<HeaderProps> = ({ avatar }) => {
   );
 
   return (
-    <header className="h-16 sticky top-0 bg-white border-b border-gray-100 z-50">
+    <header className="h-16 sticky top-0 bg-white border-b border-gray-100 z-50 header">
       <div className="h-full max-w-7xl mx-auto px-4 flex items-center justify-between">
         <img src={tedooLogo} alt="Tedoo Logo" className="w-10 h-10" />
 

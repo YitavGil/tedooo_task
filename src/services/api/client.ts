@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios, { InternalAxiosRequestConfig } from 'axios';
 
-const BASE_URL = '/';
+const BASE_URL = 'https://backend.tedooo.com/hw';
 const REQUEST_TIMEOUT = 10000;
 
 export const createApiClient = () => {
@@ -8,19 +8,18 @@ export const createApiClient = () => {
     baseURL: BASE_URL,
     timeout: REQUEST_TIMEOUT,
     headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-      'Access-Control-Allow-Headers': 'Origin, Content-Type, Accept',
-    },
-    withCredentials: false
+      'Content-Type': 'application/json'
+    }
   });
 
   client.interceptors.request.use(
-    config => {
-      const timestamp = new Date().getTime();
-      const separator = config.url?.includes('?') ? '&' : '?';
-      config.url = `${config.url}${separator}_t=${timestamp}`;
+    (config: InternalAxiosRequestConfig) => {
+      if (config.headers) {
+        delete config.headers['Cache-Control'];
+        delete config.headers['Pragma'];
+        delete config.headers['If-Modified-Since'];
+        delete config.headers['If-None-Match'];
+      }
       return config;
     },
     error => Promise.reject(error)

@@ -9,7 +9,7 @@ const FeedItemContent: React.FC<FeedItemContentProps> = ({ text, images }) => {
     
   return (
     <div className="feed-content -mx-4 mb-3">
-      <p className="text-[14px] leading-[20px] text-gray-800 mb-4 max-w-[1070px] px-4 whitespace-pre-wrap">
+      <p className="text-[14px] leading-[20px] sans-content text-gray-800 mb-4 max-w-[1070px] px-4 whitespace-pre-wrap">
         {text}
       </p>
       

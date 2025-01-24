@@ -1,6 +1,6 @@
 import React from "react";
-import { useLikes } from "../../../hooks/useLikes";
-import likeImg from "../../../assets/like.png";
+import { useLikes } from "@/hooks/useLikes";
+import likeImg from "@/assets/like.png";
 
 interface FeedItemFooterProps {
   postId: string;

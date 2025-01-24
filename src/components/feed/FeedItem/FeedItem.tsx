@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Post } from '../../../types';
-import { useImpressions } from '../../../hooks/useImpressions';
+import { Post } from '@/types';
+import { useImpressions } from '@/hooks/useImpressions';
 import FeedItemHeader from './FeedItemHeader';
 import FeedItemContent from './FeedItemContent';
 import FeedItemFooter from './FeedItemFooter';

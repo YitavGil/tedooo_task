@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Home, MessageCircle, Bell } from "lucide-react";
-import tedooLogo from "../../../assets/tedooLogo.png";
+import tedooLogo from "@/assets/tedooLogo.png";
 
 type NavItem = "home" | "messaging" | "notifications";
 

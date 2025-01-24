@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { useFeedStore } from '../../../store/slices/feedSlice';
+import { useFeedStore } from '@/store/slices/feedSlice';
 import { FeedSkeleton } from './FeedSkeleton';
 import { FeedItem } from '../FeedItem/FeedItem';
-import { feedApi } from '../../../services/api/feedApi';
+import { feedApi } from '@/services/api/feedApi';
 
 const FeedContainer: React.FC = () => {
   const { posts, hasMore, loadingState, appendPosts, setHasMore, setLoadingState } = useFeedStore();

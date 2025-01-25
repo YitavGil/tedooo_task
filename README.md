@@ -49,7 +49,7 @@ npm run dev
 yarn dev
 ```
 
-The application will be available at `http://localhost:3000`
+The application will be available at `http://localhost:3000/tedooo_task/`
 
 ### Building for Production
 Create a production build:

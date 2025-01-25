@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Home, MessageCircle, Bell } from "lucide-react";
+import { Home, MessageCircle, Bell, User } from "lucide-react";
 import tedooLogo from "@/assets/tedooLogo.png";
 
 type NavItem = "home" | "messaging" | "notifications";
@@ -9,6 +9,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ avatar }) => {
+  const [imageError, setImageError] = useState(false);
   const [activeItem, setActiveItem] = useState<NavItem>("home");
 
   const getNavItemClasses = (itemName: NavItem) => {
@@ -21,6 +22,25 @@ const Header: React.FC<HeaderProps> = ({ avatar }) => {
   const ActiveIndicator = () => (
     <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-500 rounded-full" />
   );
+
+  const renderAvatar = () => {
+    if (!avatar || imageError) {
+      return (
+        <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center">
+          <User className="w-6 h-6 text-gray-400" />
+        </div>
+      );
+    }
+
+    return (
+      <img
+        src={avatar}
+        alt="Profile"
+        className="w-10 h-10 rounded-full object-cover"
+        onError={() => setImageError(true)}
+      />
+    );
+  };
 
   return (
     <header className="h-16 sticky top-0 bg-white border-b border-gray-100 z-50 header">
@@ -81,11 +101,7 @@ const Header: React.FC<HeaderProps> = ({ avatar }) => {
         </nav>
 
         <div className="ml-4">
-          <img
-            src={avatar}
-            alt="Profile"
-            className="w-10 h-10 rounded-full object-cover"
-          />
+          {renderAvatar()}
         </div>
       </div>
     </header>

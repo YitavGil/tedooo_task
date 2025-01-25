@@ -57,7 +57,7 @@ const Header: React.FC<HeaderProps> = ({ avatar }) => {
             className={getNavItemClasses("home")}
           >
             <Home className="w-4.5 h-4.5" />
-            <span className="ml-2 text-sm font-medium">Home</span>
+            <span className="ml-2 leading-[24px] font-medium">Home</span>
             {activeItem === "home" && <ActiveIndicator />}
           </button>
 
@@ -66,7 +66,7 @@ const Header: React.FC<HeaderProps> = ({ avatar }) => {
             className={`${getNavItemClasses("messaging")} ml-8`}
           >
             <MessageCircle className="w-4.5 h-4.5" />
-            <span className="ml-2 text-sm font-medium">Messaging</span>
+            <span className="ml-2 leading-[24px] font-medium">Messaging</span>
             {activeItem === "messaging" && <ActiveIndicator />}
           </button>
 
@@ -75,7 +75,7 @@ const Header: React.FC<HeaderProps> = ({ avatar }) => {
             className={`${getNavItemClasses("notifications")} ml-8`}
           >
             <Bell className="w-4.5 h-4.5" />
-            <span className="ml-2 text-sm font-medium">Notifications</span>
+            <span className="ml-2 leading-[24px] font-medium">Notifications</span>
             {activeItem === "notifications" && <ActiveIndicator />}
           </button>
         </nav>
